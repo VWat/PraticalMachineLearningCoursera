@@ -1,0 +1,41 @@
+---
+title: "Final Assignement Report"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## This file needs to be read in parallel with the compiled report
+
+## You should create a report describing how you built your model
+
+First I, cleaned training data, by removing N/A and blank and useless data.
+At the beginning there are 160 variables, after cleaning there are 63 remaining variables. It is very important to have an efficient model.
+Then I created a partition (more on this in cross validation section).
+Check that overall correlation is low, there is no need to further remove variables
+
+I tested 3 models
+- Decision tree
+- Random forest 
+- Boosting 
+
+The most accurate model (on test set) was Random forest. Thus, I used this model to make a prediction on validation set
+
+## You should create a report describing how you used cross validation
+
+I used regular cross validation with 60% in the train set and 40% in test set.
+
+## You should create a report describing what you think the expected out of sample error is
+
+I think out of sample error is below 6% but over 3%.
+In sample error is 2% with random forest model but there might be overfitting and out of sample error is likely to be higher.
+Howerver, since the model is accurate, out of sample error cannot be extremely high.
+
+## You should create a report describing why you made the choices you did
+
+- I tried to avoid over fitting 
+- I tried to limit computation time
+- I choosed non linear model to be protect is the relation is not linear
+- I tested several model to determine the best one.
